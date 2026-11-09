@@ -1,0 +1,5 @@
+np=1 max abs error vs serial = 0.000e+00 -> PASS
+np=2 max abs error vs serial = 0.000e+00 -> PASS
+np=4 max abs error vs serial = 0.000e+00 -> PASS
+np=8 max abs error vs serial = 0.000e+00 -> PASS
+np=16 max abs error vs serial = 0.000e+00 -> PASS

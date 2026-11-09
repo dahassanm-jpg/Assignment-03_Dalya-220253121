@@ -1,0 +1,25 @@
+=== 1. Original code (expected to HANG; killed after 10 s) ===
+[rank 1] mode=deadlock: starting
+[rank 0] mode=deadlock: starting
+exit status: 124 (124 = killed by timeout, i.e. deadlock)
+
+=== Fix: reorder ===
+[rank 1] mode=reorder: starting
+[rank 0] mode=reorder: starting
+[rank 0] mode=reorder: completed, received value 1 from rank 1
+[rank 1] mode=reorder: completed, received value 0 from rank 0
+exit status: 0
+
+=== Fix: sendrecv ===
+[rank 0] mode=sendrecv: starting
+[rank 1] mode=sendrecv: starting
+[rank 0] mode=sendrecv: completed, received value 1 from rank 1
+[rank 1] mode=sendrecv: completed, received value 0 from rank 0
+exit status: 0
+
+=== Fix: nonblocking ===
+[rank 1] mode=nonblocking: starting
+[rank 0] mode=nonblocking: starting
+[rank 0] mode=nonblocking: completed, received value 1 from rank 1
+[rank 1] mode=nonblocking: completed, received value 0 from rank 0
+exit status: 0
